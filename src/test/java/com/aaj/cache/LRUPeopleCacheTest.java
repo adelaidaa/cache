@@ -23,7 +23,7 @@ class LRUPeopleCacheTest {
         Person person3 = Person.builder().id(UUID.randomUUID()).firstName("Ade3").lastName("Alonso3").build();
 
         lruPeopleCache.addElement(person1);
-        assertThat(lruPeopleCache.getElements()).containsExactly(person1);
+        assertThat(lruPeopleCache.getElement(person1.getId())).isNotEmpty();
         assertThat(lruPeopleCache.getElementsIndex().get(person1.getId())).isEqualTo(0);
 
         lruPeopleCache.addElement(person2);

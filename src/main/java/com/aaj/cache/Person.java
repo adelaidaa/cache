@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter
 @Builder
 @EqualsAndHashCode
-public class Person {
+public class Person extends ElementWithId<UUID>{
     private final UUID id;
     private final String firstName;
     private final String lastName;
